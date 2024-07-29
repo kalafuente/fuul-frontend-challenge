@@ -1,0 +1,9 @@
+node_modules
+build
+dist
+.next
+yarn-error.log
+*.log
+pids
+.vscode
+.DS_Store
