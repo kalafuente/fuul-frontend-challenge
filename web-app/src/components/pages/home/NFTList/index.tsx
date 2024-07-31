@@ -4,15 +4,15 @@ import Web3 from 'web3';
 import { Fuul } from 'fuul-sdk';
 import { useState } from 'react';
 import { CategoryTitle, NftItemContainer, NftListContainer, StyledCard, StyledCardContent, SuccessMessage } from './NFTStyles';
+const fuul = new Fuul();
 
 type NFTListProps = {
   groupedNfts: { [key: string]: NFT[] };
   account: string;
   callback: () => void;
-  fuul: Fuul;
 }
 
-const mintNFT = async (nftId: string, account: string, category: string, fuul: Fuul, callback: () => void, setError: (error: boolean) => void,
+const mintNFT = async (nftId: string, account: string, category: string, callback: () => void, setError: (error: boolean) => void,
   setMintedNfts: any) => {
   if (typeof window !== 'undefined' && window.ethereum) {
     try {
@@ -66,7 +66,7 @@ export const NFTList = (props: NFTListProps) => {
                     {mintedNfts.has(nft.id) ? <SuccessMessage>Successfully minted</SuccessMessage> :
                       <Button
                         sx={{ padding: '5px' }}
-                        variant="contained" onClick={() => mintNFT(nft.id, props.account, nft.category, props.fuul, props.callback, setError, setMintedNfts)}>
+                        variant="contained" onClick={() => mintNFT(nft.id, props.account, nft.category, props.callback, setError, setMintedNfts)}>
                         Mint
                       </Button>}
                   </StyledCardContent>
