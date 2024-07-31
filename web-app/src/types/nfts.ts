@@ -3,3 +3,7 @@ export type NFT = {
   category: string;
   editions: number;
 };
+
+export type GroupedNFTs = {
+  [key: string]: NFT[];
+};

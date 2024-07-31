@@ -21,7 +21,7 @@ export const ModalTitle = styled(Typography)`
   font-size: 30px;
 `;
 
-export const ModalDescription = styled(Typography)`
+export const ModalDescription = styled.div`
   margin-top: 16px;
 `;
 

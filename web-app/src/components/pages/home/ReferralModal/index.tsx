@@ -46,7 +46,7 @@ export const ReferralModal = (props: ReferralModalProps) => {
         </p>
       </ProjectContainer>
 
-      <ModalDescription id="modal-description" sx={{ mt: 2 }}>
+      <ModalDescription id="modal-description">
         {props.isClientSide ? (
           <ShareLink
             account={props.account}
